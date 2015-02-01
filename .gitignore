@@ -8,6 +8,7 @@
 /test/tmp/
 /test/version_tmp/
 /tmp/
+dump.rdb
 
 ## Specific to RubyMotion:
 .dat*
