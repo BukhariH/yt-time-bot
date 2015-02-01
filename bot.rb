@@ -42,12 +42,7 @@ end
 
 def post_comment(time, link_id)
 	comment = <<COMMENT
-OP says you should skip to #{time}.
-
-Why?
-People with some mobile Web Browsers and some Reddit Apps can't skip to the time set in the url automatically.
-
-Hence, they have to do it manually. This bot is there to help them :)
+OP says you should skip to **#{time}**.
 
 ^Comment ^will ^be ^deleted ^on ^a ^comment ^score ^of ^-1 ^or ^less.
 COMMENT
