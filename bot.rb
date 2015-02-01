@@ -23,7 +23,7 @@ end
 def get_time(link, link_id)
 	link = link.split("t=")[1]
 	if link.include?('h') || link.include?('m')
-		 post_comment(link.gsub('s', ' seconds').gsub('m', ' minutes ').gsub('h', ' hours '))
+		 post_comment(link.gsub('s', ' seconds').gsub('m', ' minutes ').gsub('h', ' hours '), link_id)
 	else link.include?('s')
 		if link.to_i > 30
 			 post_comment(link.gsub('s', ' seconds'), link_id)
