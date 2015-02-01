@@ -41,15 +41,21 @@ def valid_json?(json)
 end
 
 def post_comment(time, link_id)
-	comment = <<COMMENT
+	begin
+		comment = <<COMMENT
 OP says you should skip to **#{time}**.
 
 ^Comment ^will ^be ^deleted ^on ^a ^comment ^score ^of ^-1 ^or ^less.
 COMMENT
-	@bot.submit_comment(@bot.link(link_id), comment)
-	$redis.set(link_id, "true")
-	puts "Comment Submitted to #{link_id}"
-	sleep 30
+		@bot.submit_comment(@bot.link(link_id), comment)
+	rescue
+		sleep 60
+		retry
+	else
+		$redis.set(link_id, "true")
+		puts "Comment Submitted to #{link_id}"
+		sleep 30
+	end
 end
 
 def delete_comment
