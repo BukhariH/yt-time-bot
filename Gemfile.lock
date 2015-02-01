@@ -43,9 +43,6 @@ GEM
     rest-client (1.6.7)
       mime-types (>= 1.16)
     rubyzip (0.9.9)
-    snoo (0.1.2)
-      httparty
-      nokogiri
     thor (0.19.1)
 
 PLATFORMS
@@ -59,4 +56,3 @@ DEPENDENCIES
   oj
   redditkit (~> 1.0.2)
   redis
-  snoo
