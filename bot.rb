@@ -52,7 +52,7 @@ Hence, they have to do it manually. This bot is there to help them :)
 ^Comment ^will ^be ^deleted ^on ^a ^comment ^score ^of ^-1 ^or ^less.
 COMMENT
 	puts comment
-	@bot.commentlink_id, comment)
+	@bot.comment(link_id, comment)
 	$redis.set(link_id, "true")
 end
 
