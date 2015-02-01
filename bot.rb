@@ -20,17 +20,6 @@ def ytLinkExtract(links)
 	links.select {|link| link.downcase.include?('://youtu.be') or link.downcase.include?('://youtube.com') and link.downcase.include?('t=')}
 end
 
-# Login the bot to Reddit using Snoo API
-# def login(username, password)
-# 	if @bot.log_in(username, password)
-# 		puts 'Logged in to Reddit successfully'
-# 		true
-# 	else
-# 		puts 'Could not login to Reddit. Please check the username/pass/internetconnection and try again'
-# 		false
-# 	end
-# end
-
 def get_time(link, link_id)
 	link = link.split("t=")[1]
 	if link.include?('h') || link.include?('m')
@@ -63,8 +52,8 @@ Hence, they have to do it manually. This bot is there to help them :)
 ^Comment ^will ^be ^deleted ^on ^a ^comment ^score ^of ^-1 ^or ^less.
 COMMENT
 	puts comment
-	@bot.comment(link[:id], comment)
-	$redis.set(link[:id], "true")
+	@bot.commentlink_id, comment)
+	$redis.set(link_id, "true")
 end
 
 def delete_comment
