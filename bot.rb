@@ -86,19 +86,19 @@ found = 0 # Count number of links found since run
 while loop == 1
 
 		#Fetching Latest Comments
-		comments = HTTParty.get("http://reddit.com/r/#{subs_link}/comments.json?limit=#{@limit}")
-		#Making sure the it's the correct response
-		if valid_json?(comments.body)
-			comments = Oj.load(comments.body)['data']['children']
-			comments.each do |comment|
-				comment = comment['data']
-				links = ytLinkExtract(linkExtract(comment['body_html']))
-				@links << { :links => links, :id => comment['name'], :post_link_id => comment['link_id'] } unless links.empty?
-			end
-			counter = counter + 1
-			puts "Finshied Searching: #{counter} requests"
-			sleep(2)
-		end
+		# comments = HTTParty.get("http://reddit.com/r/#{subs_link}/comments.json?limit=#{@limit}")
+		# #Making sure the it's the correct response
+		# if valid_json?(comments.body)
+		# 	comments = Oj.load(comments.body)['data']['children']
+		# 	comments.each do |comment|
+		# 		comment = comment['data']
+		# 		links = ytLinkExtract(linkExtract(comment['body_html']))
+		# 		@links << { :links => links, :id => comment['name'], :post_link_id => comment['link_id'] } unless links.empty?
+		# 	end
+		# 	counter = counter + 1
+		# 	puts "Finshied Searching: #{counter} requests"
+		# 	sleep(2)
+		# end
 
 
 		#Fetches latest posts
