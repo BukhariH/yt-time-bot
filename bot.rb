@@ -49,6 +49,7 @@ COMMENT
 	@bot.submit_comment(@bot.link(link_id), comment)
 	$redis.set(link_id, "true")
 	puts "Comment Submitted to #{link_id}"
+	sleep 30
 end
 
 def delete_comment
